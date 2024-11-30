@@ -4,7 +4,7 @@ function renderClientsTab() {
   const mainContent = document.getElementById("mainContent");
 
   function fetchClients() {
-    fetch("http://localhost:3000/clients")
+    fetch("https://calendar-backend-v203.onrender.com/clients")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch clients");
@@ -193,7 +193,7 @@ function displayClientDetails(clientName, clientData) {
         parseFloat(newPayment) >= 20 ? "Paid in full" : "Partially paid";
   
       // Send updated data to backend
-      fetch(`http://localhost:3000/update-payment`, {
+      fetch(`https://calendar-backend-v203.onrender.com/update-payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

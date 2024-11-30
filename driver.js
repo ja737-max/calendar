@@ -7,7 +7,7 @@ function renderDriversTab() {
     
     // Fetch drivers from backend and update the local cache
   function fetchDrivers() {
-    fetch("http://localhost:3000/drivers")
+    fetch("https://calendar-backend-v203.onrender.com/drivers")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch drivers");
@@ -206,7 +206,7 @@ function renderDriversTab() {
       return;
     }
   
-    fetch(`http://localhost:3000/driver-details?driverName=${encodeURIComponent(driverName)}`)
+    fetch(`https://calendar-backend-v203.onrender.com/driver-details?driverName=${encodeURIComponent(driverName)}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch driver details");
@@ -349,7 +349,7 @@ function populateClientDropdown(clients) {
 
 // Fetch clients from backend and populate dropdown
 function fetchAndPopulateClients() {
-  fetch("http://localhost:3000/clients")
+  fetch("https://calendar-backend-v203.onrender.com/clients")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch clients");
@@ -406,7 +406,7 @@ document.getElementById("addClientForm").addEventListener("submit", (e) => {
   };
 
   // Send data to the backend
-  fetch("http://localhost:3000/clients", {
+  fetch("https://calendar-backend-v203.onrender.com/clients", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -453,7 +453,7 @@ document.getElementById("closeClientModalBtn").addEventListener("click", () => {
     };
 
     // Save to backend
-    fetch("http://localhost:3000/drivers", {
+    fetch("https://calendar-backend-v203.onrender.com/drivers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
