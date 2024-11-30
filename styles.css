@@ -519,3 +519,26 @@ body {
 .activity-table td {
   color: #333;
 }
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: auto; /* Adjust height if needed */
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  .close-btn {
+    font-size: 18px;
+  }
+}
