@@ -209,10 +209,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   opacity: 1;
   visibility: visible;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
 }
 
 .modal.hidden {
@@ -220,6 +220,7 @@ body {
   visibility: hidden;
 }
 
+/* Modal content */
 .modal-content {
   background: #ffffff;
   border-radius: 15px;
@@ -229,7 +230,24 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
   font-family: Arial, sans-serif;
+  max-height: 80vh; /* Limit the height to 80% of the viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
+
+/* Scrollbar styling (optional) */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 
 /* Close Button */
 .close-btn {
@@ -523,11 +541,12 @@ body {
 /* Responsive design for small screens */
 @media (max-width: 768px) {
   .modal {
+    margin-top: 20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 95%;
-    height: auto; /* Adjust height if needed */
+    /* height: auto; */
   }
 
   .modal-title {
