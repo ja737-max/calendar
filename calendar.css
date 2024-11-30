@@ -1,0 +1,116 @@
+/* Calendar Container */
+.calendar {
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Calendar Header */
+  .calendar-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .calendar-nav-btn {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    font-size: 1.5rem;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  
+  .calendar-nav-btn:hover {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .calendar-month {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Calendar Grid */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 14px;
+    text-align: center;
+  }
+  
+  .calendar-grid .day-name {
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .calendar-grid .date {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .calendar-grid .date:hover {
+    background: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  .calendar-grid .date.selected {
+    background: #007bff;
+    color: white;
+    border-radius: 100%;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .calendar {
+      padding: 15px;
+    }
+  
+    .calendar-header {
+      gap: 10px;
+    }
+  
+    .calendar-nav-btn {
+      height: 35px;
+      width: 35px;
+      font-size: 1.2rem;
+    }
+  
+    .calendar-month {
+      font-size: 1rem;
+    }
+  
+    .calendar-grid {
+      gap: 10px;
+    }
+  
+    .calendar-grid .date {
+      width: 35px;
+      height: 35px;
+      font-size: 0.9rem;
+    }
+  }
+  
