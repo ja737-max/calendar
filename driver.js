@@ -51,83 +51,85 @@ function renderDriversTab() {
       </div>
     </div>
 
+  <!-- Add Driver Modal -->
+<div id="addDriverModal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-btn" id="closeModalBtn">&times;</button>
+    <h2 class="modal-title">Add Driver</h2>
+    <form id="addDriverForm">
+      <div class="form-group">
+        <label>
+          <input type="text" id="firstName" placeholder="First name" required />
+          <span class="icon"><i class="fa fa-user"></i></span>
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="text" id="lastName" placeholder="Last name" required />
+          <span class="icon"><i class="fa fa-user"></i></span>
+        </label>
+      </div>
+      
+      <!-- Hidden fields with default values -->
+      <div class="form-group hidden">
+        <label>
+          <input type="email" id="email" placeholder="Email" value="example@example.com" readonly />
+          <span class="icon"><i class="fa fa-envelope"></i></span>
+        </label>
+      </div>
+      <div class="form-group hidden">
+        <label>
+          <input type="text" id="phone" placeholder="Phone" value="123-456-7890" readonly />
+          <span class="icon"><i class="fa fa-phone"></i></span>
+        </label>
+      </div>
+      <div class="form-group hidden">
+        <label>
+          <input type="text" id="carModel" placeholder="Car model" value="Toyota Corolla" readonly />
+          <span class="icon"><i class="fa fa-car"></i></span>
+        </label>
+      </div>
+      <div class="form-group hidden">
+        <label>
+          <input type="text" id="licensePlate" placeholder="License plate" value="ABC123" readonly />
+          <span class="icon"><i class="fa fa-car"></i></span>
+        </label>
+      </div>
 
-<!-- Add Driver Modal -->
-    <div id="addDriverModal" class="modal hidden">
-      <div class="modal-content">
-        <button class="close-btn" id="closeModalBtn">&times;</button>
-        <h2 class="modal-title">Add Driver</h2>
-        <form id="addDriverForm">
-          <div class="form-group">
-            <label>
-              <input type="text" id="firstName" placeholder="First name" required />
-              <span class="icon"><i class="fa fa-user"></i></span>
-            </label>
-          </div>
-          <div class="form-group">
-            <label>
-              <input type="text" id="lastName" placeholder="Last name" required />
-              <span class="icon"><i class="fa fa-user"></i></span>
-            </label>
-          </div>
-          <div class="form-group">
-            <label>
-              <input type="email" id="email" placeholder="Email" required />
-              <span class="icon"><i class="fa fa-envelope"></i></span>
-            </label>
-          </div>
-          <div class="form-group">
-            <label>
-              <input type="text" id="phone" placeholder="Phone" required />
-              <span class="icon"><i class="fa fa-phone"></i></span>
-            </label>
-          </div>
-          <div class="form-group">
-            <label>
-              <input type="text" id="carModel" placeholder="Car model" required />
-              <span class="icon"><i class="fa fa-car"></i></span>
-            </label>
-          </div>
-          <div class="form-group">
-            <label>
-              <input type="text" id="licensePlate" placeholder="License plate" required />
-              <span class="icon"><i class="fa fa-car"></i></span>
-            </label>
-          </div>
-          <div class="form-group color-picker">
-  <span class="color-label">Color:</span>
-  <div class="color-options">
-    <!-- Color options -->
-    <button type="button" class="color-option blue" data-color="#0000FF"></button>
-    <button type="button" class="color-option red" data-color="#FF0000"></button>
-    <button type="button" class="color-option green" data-color="#00FF00"></button>
-    <button type="button" class="color-option yellow" data-color="#FFFF00"></button>
-    <button type="button" class="color-option orange" data-color="#FFA500"></button>
-    <button type="button" class="color-option purple" data-color="#800080"></button>
-    <button type="button" class="color-option pink" data-color="#FFC0CB"></button>
-    <button type="button" class="color-option brown" data-color="#A52A2A"></button>
-    <button type="button" class="color-option gray" data-color="#808080"></button>
-    <button type="button" class="color-option cyan" data-color="#00FFFF"></button>
-    <button type="button" class="color-option lime" data-color="#00FF00"></button>
-    <button type="button" class="color-option teal" data-color="#008080"></button>
-    <button type="button" class="color-option magenta" data-color="#FF00FF"></button>
-    <button type="button" class="color-option navy" data-color="#000080"></button>
-    <button type="button" class="color-option olive" data-color="#808000"></button>
+      <!-- Color Picker Section -->
+      <div class="form-group color-picker">
+        <span class="color-label">Color:</span>
+        <div class="color-options">
+          <button type="button" class="color-option blue" data-color="#0000FF"></button>
+          <button type="button" class="color-option red" data-color="#FF0000"></button>
+          <button type="button" class="color-option green" data-color="#00FF00"></button>
+          <button type="button" class="color-option yellow" data-color="#FFFF00"></button>
+          <button type="button" class="color-option orange" data-color="#FFA500"></button>
+          <button type="button" class="color-option purple" data-color="#800080"></button>
+          <button type="button" class="color-option pink" data-color="#FFC0CB"></button>
+          <button type="button" class="color-option brown" data-color="#A52A2A"></button>
+          <button type="button" class="color-option gray" data-color="#808080"></button>
+          <button type="button" class="color-option cyan" data-color="#00FFFF"></button>
+          <button type="button" class="color-option lime" data-color="#00FF00"></button>
+          <button type="button" class="color-option teal" data-color="#008080"></button>
+          <button type="button" class="color-option magenta" data-color="#FF00FF"></button>
+          <button type="button" class="color-option navy" data-color="#000080"></button>
+          <button type="button" class="color-option olive" data-color="#808000"></button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input id="colorCode" type="text" placeholder="Selected color code" readonly />
+          <span class="icon"><i class="fa fa-palette"></i></span>
+        </label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Add Driver</button>
+      </div>
+    </form>
   </div>
 </div>
-
-          <div class="form-group">
-            <label>
-              <input id="colorCode" type="text" placeholder="Selected color code" readonly />
-              <span class="icon"><i class="fa fa-palette"></i></span>
-            </label>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="submit-btn">Add Driver</button>
-          </div>
-        </form>
-      </div>
-    </div>
 
   <!-- Add client Modal -->
 
